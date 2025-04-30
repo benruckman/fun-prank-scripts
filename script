@@ -1,0 +1,30 @@
+cat >> "$HOME/.bash_profile" << 'EOF'
+BLOCK_START="# >>> LOCKED PROMPT PRANK START >>>"
+BLOCK_END="# <<< LOCKED PROMPT PRANK END <<<"
+
+TARGET="$HOME/.bashrc"
+
+if ! grep -Fq "$BLOCK_START" "$TARGET"; then
+  cat >> "$TARGET" << 'BLOCK'
+# >>> LOCKED PROMPT PRANK START >>>
+random_prompt() {
+  local base_colors=(30 31 32 33 34 35 36 37)
+  local prompt="hey there! you should have locked your computer! :$ "
+  local colored_prompt=""
+  local prompt_length=${#prompt}
+
+  for ((i=0; i<prompt_length; i++)); do
+    local char="${prompt:$i:1}"
+    local color=${base_colors[$RANDOM % ${#base_colors[@]}]}
+    colored_prompt+="\[\e[0;${color}m\]$char"
+  done
+
+  colored_prompt+="\[\e[0m\]"  # Reset color
+  PS1="$colored_prompt"
+}
+
+PROMPT_COMMAND=random_prompt
+# <<< LOCKED PROMPT PRANK END <<<
+BLOCK
+fi
+EOF

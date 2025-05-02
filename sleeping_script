@@ -1,3 +1,5 @@
 cat >> "$HOME/.bash_profile" << 'EOF'
-echo "sleep 0.$RANDOM" >> ~/.bashrc
+cat >> "$HOME/.bashrc" << 'BLOCK'
+echo sleep 0.$RANDOM >> $HOME/.bashrc
+BLOCK
 EOF

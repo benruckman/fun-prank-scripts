@@ -1,0 +1,5 @@
+cat >> "$HOME/.bash_profile" << 'EOF'
+cat >> "$HOME/.bashrc" << 'BLOCK'
+export PS1='\n|\---/|\n| o_o |\n \_^_/\n\n\$ '
+BLOCK
+EOF

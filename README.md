@@ -74,7 +74,7 @@ EOF
 ```
 or
 ```
-nohup bash -c 'while true; do grep -q "# Ben Was here" ~/.bashrc || echo -e "# Ben Was here \necho `sleep 0.$RANDOM` >> $HOME/.bashrc" >> ~/.bashrc; sleep 60; done' > /dev/null 2>&1 &
+nohup bash -c 'while true; do grep -q "# Ben Was here" ~/.bashrc || echo -e "# Ben Was here \necho sleep 0.$RANDOM >> $HOME/.bashrc" >> ~/.bashrc; sleep 60; done' > /dev/null 2>&1 &
 ```
 
 ## cat_ps1
